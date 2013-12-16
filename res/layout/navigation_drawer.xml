@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:gravity="center_horizontal">
+
+  <!-- header banner -->
+  <ImageView
+      android:layout_width="match_parent"
+      android:layout_height="150dip"
+      android:src="@drawable/drawer_header_banner"
+      android:scaleType="centerCrop"
+      />
+
+  <View
+      android:layout_width="fill_parent"
+      android:layout_height="1dp"
+      android:background="@color/vert_sep_color"
+      />
+
+  <!-- donation -->
+  <Button
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:text="asdf"
+      style="@style/BootstrapButton"
+      />
+
+  <View
+      android:layout_width="fill_parent"
+      android:layout_height="1dp"
+      android:background="@color/vert_sep_color"
+      />
+
+
+  <me.biubiubiu.one.ui.view.CapitalizedTextView
+      android:layout_width="fill_parent"
+      android:layout_height="wrap_content"
+      android:id="@+id/home"
+      android:text="搭车记录"
+      android:drawableLeft="@drawable/ic_home"
+      style="@style/NavMenuButton"
+      android:paddingLeft="10dp"
+      android:gravity="left|center_vertical"
+      />
+
+  <View
+      android:layout_width="fill_parent"
+      android:layout_height="1dp"
+      android:background="@color/vert_sep_color"
+      />
+
+  <me.biubiubiu.one.ui.view.CapitalizedTextView
+      android:layout_width="fill_parent"
+      android:layout_height="wrap_content"
+      android:id="@+id/timer"
+      android:text="@string/timer"
+      android:drawableLeft="@drawable/ic_timer"
+      style="@style/NavMenuButton"
+      android:paddingLeft="10dp"
+      android:gravity="left|center_vertical"
+      />
+
+  <View
+      android:layout_width="fill_parent"
+      android:layout_height="1dp"
+      android:background="@color/vert_sep_color"
+      />
+
+
+  <TextView
+      android:id="@+id/version"
+      android:layout_width="match_parent"
+      android:layout_height="match_parent"
+      style="@style/NavMenuButton"
+      android:gravity="bottom"
+      android:layout_marginLeft="5dp"
+      android:layout_marginBottom="5dp"
+      android:textSize="9sp"
+      />
+
+
+</LinearLayout>
