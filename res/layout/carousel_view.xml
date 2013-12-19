@@ -1,22 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res/me.biubiubiu.one"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="@color/pager_background"
-    android:orientation="vertical" >
+              xmlns:app="http://schemas.android.com/apk/res/me.biubiubiu.one"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:background="@color/pager_background"
+              android:orientation="vertical" >
 
-    <GridView
-        android:id="@+id/grid"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:numColumns="2"
-        android:gravity="center"
-        android:background="#e7ebef"
-        android:verticalSpacing="14.5sp"
-        android:horizontalSpacing="14.5sp"
-        >
+  <GridView
+      android:id="@+id/grid"
+      android:layout_width="match_parent"
+      android:layout_height="match_parent"
+      android:numColumns="2"
+      android:gravity="center"
+      android:background="#e7ebef"
+      >
 
-    </GridView>
+  </GridView>
 
 </LinearLayout>

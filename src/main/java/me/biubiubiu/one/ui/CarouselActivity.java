@@ -3,6 +3,7 @@ package me.biubiubiu.one.ui;
 import android.accounts.OperationCanceledException;
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.v4.app.FragmentActivity;
 import android.support.v4.view.ViewPager;
 import android.view.View;
 import android.widget.*;
@@ -22,16 +23,16 @@ import javax.inject.Inject;
 import butterknife.InjectView;
 import butterknife.Views;
 import net.simonvt.menudrawer.MenuDrawer;
+import net.simonvt.menudrawer.MenuDrawer.OnDrawerStateChangeListener;
 
 
 /**
  * Activity to view the carousel and view pager indicator with fragments.
  */
-public class CarouselActivity extends BootstrapFragmentActivity {
+public class CarouselActivity extends BootstrapFragmentActivity implements OnDrawerStateChangeListener {
 
     @InjectView(R.id.grid) GridView menuLayout;
     @Inject BootstrapServiceProvider serviceProvider;
-
     static public final String[] TITLES = {
         "我要搭车",
         "看谁能带带我",
@@ -41,11 +42,12 @@ public class CarouselActivity extends BootstrapFragmentActivity {
     };
 
     static public final int[] IMAGE_RES = {
-        R.drawable.ic_home,
-        R.drawable.ic_home,
-        R.drawable.ic_home,
-        R.drawable.ic_home,
-        R.drawable.ic_home,
+        R.drawable.icon01_03,
+        R.drawable.icon02_03,
+        R.drawable.icon03_03,
+        R.drawable.icon04_03,
+        R.drawable.icon05_07,
+        R.drawable.icon06_07,
     };
 
     static public final int[] IMAGE_BACKGROUND = {
@@ -56,8 +58,7 @@ public class CarouselActivity extends BootstrapFragmentActivity {
         R.color.menu_green,
     };
 
-        private MenuDrawer menuDrawer;
-
+    private MenuDrawer menuDrawer;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
@@ -75,6 +76,8 @@ public class CarouselActivity extends BootstrapFragmentActivity {
         Views.inject(this);
         BlockAdapter adapter = new BlockAdapter(this, TITLES, IMAGE_RES, IMAGE_BACKGROUND);
         menuLayout.setAdapter(adapter);
+
+        getSupportActionBar().setTitle("我要搭车");
     }
 
 
@@ -99,7 +102,6 @@ public class CarouselActivity extends BootstrapFragmentActivity {
                     navigateToTimer();
                 }
             });
-
     }
 
     @Override
@@ -119,5 +121,15 @@ public class CarouselActivity extends BootstrapFragmentActivity {
     private void navigateToTimer() {
         final Intent i = new Intent(this, BootstrapTimerActivity.class);
         startActivity(i);
+    }
+
+    @Override
+    public void onDrawerSlide(float arg0, int arg1) {
+
+    }
+
+    @Override
+    public void onDrawerStateChange(int arg0, int arg1) {
+        getSupportActionBar().setTitle("closed");
     }
 }

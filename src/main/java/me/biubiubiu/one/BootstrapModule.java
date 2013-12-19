@@ -15,6 +15,7 @@ import me.biubiubiu.one.ui.NewsActivity;
 import me.biubiubiu.one.ui.NewsListFragment;
 import me.biubiubiu.one.ui.UserActivity;
 import me.biubiubiu.one.ui.UserListFragment;
+import me.biubiubiu.one.ui.*;
 import com.squareup.otto.Bus;
 
 import javax.inject.Singleton;
@@ -40,7 +41,8 @@ import dagger.Provides;
                 NewsListFragment.class,
                 UserActivity.class,
                 UserListFragment.class,
-                TimerService.class
+                TimerService.class,
+                PostRideActivity.class
         }
 
 )

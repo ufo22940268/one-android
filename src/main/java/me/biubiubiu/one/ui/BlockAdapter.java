@@ -50,7 +50,7 @@ public class BlockAdapter extends BaseAdapter {
     private View getBlock(String major, String minor, int image, int background) {
         View item = LayoutInflater.from(
                 mContext).inflate(R.layout.row_item_repo_manage, null, false);
-        item.setBackgroundResource(background);
+        item.findViewById(R.id.content).setBackgroundResource(background);
         TextView majorView =  (TextView)item.findViewById(R.id.major);
         majorView.setText(major);
         majorView.setCompoundDrawablesWithIntrinsicBounds(0, image, 0, 0);

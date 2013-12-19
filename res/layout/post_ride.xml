@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:editTextFormExample="http://schemas.android.com/apk/res-auto"
+            xmlns:form="http://schemas.android.com/apk/res-auto"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            >
+  <LinearLayout
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:orientation="vertical"
+      android:paddingLeft="6dip"
+      android:paddingRight="6dip"
+      >
+
+
+    <TableLayout
+        android:id="@+id/form"
+        android:orientation="vertical"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:stretchColumns="1"
+        android:divider="@drawable/divider"
+        >
+
+      <TableRow
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:paddingTop="10dip"
+          android:paddingBottom="10dip"
+          >
+
+        <TextView
+            android:text="标题"
+            style="@style/form_label"
+            />
+
+        <com.andreabaccega.widget.FormEditText
+            android:id="@+id/name"
+            style="@style/form_field"
+            />
+
+      </TableRow>
+
+      <TableRow
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:paddingTop="10dip"
+          android:paddingBottom="10dip"
+          >
+
+        <TextView
+            android:text="可等待时间"
+            style="@style/form_label"
+            />
+
+        <me.biubiubiu.one.ui.view.ValueSpinner
+            android:id="@+id/wait_time"
+            />
+
+      </TableRow>
+
+      <TableRow
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:paddingTop="10dip"
+          android:paddingBottom="10dip"
+          >
+
+        <TextView
+            android:text="距离"
+            style="@style/form_label"
+            />
+
+        <TextView
+            android:id="@+id/distance"
+            />
+
+      </TableRow>
+
+      <TableRow
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:paddingTop="10dip"
+          android:paddingBottom="10dip"
+          >
+
+        <TextView
+            android:text="单价"
+            style="@style/form_label"
+            />
+
+        <EditText
+            android:id="@+id/price"
+            style="@style/form_field"
+            />
+
+      </TableRow>
+
+      <TableRow
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:paddingTop="10dip"
+          android:paddingBottom="10dip"
+          >
+
+        <TextView
+            android:text="可搭载人数"
+            style="@style/form_label"
+            />
+
+        <me.biubiubiu.one.ui.view.ValueSpinner
+            android:id="@+id/people"
+            />
+
+      </TableRow>
+
+      <TableRow
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:paddingTop="10dip"
+          android:paddingBottom="10dip"
+          >
+
+        <TextView
+            android:text="车辆类型"
+            style="@style/form_label"
+            />
+
+        <me.biubiubiu.one.ui.view.ValueSpinner
+            android:id="@+id/car_type"
+            />
+
+      </TableRow>
+
+      <TableRow
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:paddingTop="10dip"
+          android:paddingBottom="10dip"
+          >
+
+        <TextView
+            android:text="备注"
+            style="@style/form_label"
+            />
+
+
+        <com.andreabaccega.widget.FormEditText
+            android:id="@+id/comment"
+            />
+
+      </TableRow>
+
+    </TableLayout>
+
+    <Button
+        android:id="@+id/b_signin"
+        style="@style/ShadowText"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="15dp"
+        android:background="@drawable/button_background_states"
+        android:gravity="center"
+        android:onClick="handleLogin"
+        android:padding="10dp"
+        android:text="完成"
+        android:textColor="@color/text"
+        android:textSize="20sp"
+        android:textStyle="bold" />
+
+  </LinearLayout>
+</ScrollView>

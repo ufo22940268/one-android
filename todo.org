@@ -1,0 +1,10 @@
+
+* DONE 添加头像等用户信息
+* DONE 调整主界面中的GridView到周围都有相等的gap
+* DONE 导入formvalidator
+* TODO 完成“发布拼车服务器
+  DEADLINE: <2013-12-20 Fri>
+- [X] 其他条目添加
+- [ ] 起始和终点目标的
+* TODO 完成“看谁能带我”
+  DEADLINE: <2013-12-19 Thu>
