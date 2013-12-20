@@ -1,43 +1,47 @@
 package me.biubiubiu.one.ui;
 
-import me.biubiubiu.one.ui.view.*;
+import java.util.*;
 
-import android.accounts.OperationCanceledException;
-import android.content.Intent;
+import com.loopj.android.http.RequestParams;
+
+import me.biubiubiu.one.R;
+import me.biubiubiu.one.ui.view.ValueSpinner;
+import me.biubiubiu.one.util.HttpHandler;
+import me.biubiubiu.one.util.ViewUtils;
+import android.app.DatePickerDialog;
+import android.app.Dialog;
+import android.app.TimePickerDialog;
 import android.os.Bundle;
-import android.support.v4.app.FragmentActivity;
-import android.support.v4.view.ViewPager;
 import android.view.View;
 import android.widget.*;
-
-import com.actionbarsherlock.view.MenuItem;
-import com.actionbarsherlock.view.Window;
-
-import me.biubiubiu.one.BootstrapServiceProvider;
-import me.biubiubiu.one.R;
-import me.biubiubiu.one.core.BootstrapService;
-import me.biubiubiu.one.util.SafeAsyncTask;
-
-import com.viewpagerindicator.TitlePageIndicator;
-
-import javax.inject.Inject;
-
+import android.util.*;
 import butterknife.InjectView;
 import butterknife.Views;
-import net.simonvt.menudrawer.MenuDrawer;
-import net.simonvt.menudrawer.MenuDrawer.OnDrawerStateChangeListener;
 
 
 /**
  * Activity to view the carousel and view pager indicator with fragments.
  */
-public class PostRideActivity extends BootstrapFragmentActivity  {
+public class PostRideActivity extends BaseActivity  {
 
-    @InjectView(R.id.form) TableLayout form;
+    @InjectView(R.id.form) TableLayout mForm;
     @InjectView(R.id.price) TextView mPriceView;
     @InjectView(R.id.people) ValueSpinner mPeopleView;
     @InjectView(R.id.car_type) ValueSpinner mCarTypeView;
     @InjectView(R.id.wait_time) ValueSpinner mWaitTimeView;
+    @InjectView(R.id.pick_date) Button mPickDate;
+    @InjectView(R.id.pick_time) Button mPickTime;
+
+    // date and time
+    private int mYear;
+    private int mMonth;
+    private int mDay;
+    private int mHour;
+    private int mMinute;
+
+    static final int TIME_DIALOG_ID = 0;
+    static final int DATE_DIALOG_ID = 1;
+
     static public final String[][] spinner_map_people = {
         {"1人", "1"},
         {"2人", "2"},
@@ -64,5 +68,119 @@ public class PostRideActivity extends BootstrapFragmentActivity  {
         mPeopleView.setup(spinner_map_people);
         mCarTypeView.setup(spinner_map_car_type);
         mWaitTimeView.setup(spinner_map_wait_time);
+
+        initDate();
     }
+
+    public void initDate() {
+        mPickDate.setOnClickListener(new View.OnClickListener() {
+
+                public void onClick(View v) {
+                    showDialog(DATE_DIALOG_ID);
+                }
+            });
+
+        mPickTime.setOnClickListener(new View.OnClickListener() {
+
+                public void onClick(View v) {
+                    showDialog(TIME_DIALOG_ID);
+                }
+            });
+
+        final Calendar c = Calendar.getInstance();
+        mYear = c.get(Calendar.YEAR);
+        mMonth = c.get(Calendar.MONTH);
+        mDay = c.get(Calendar.DAY_OF_MONTH);
+        mHour = c.get(Calendar.HOUR_OF_DAY);
+        mMinute = c.get(Calendar.MINUTE);
+
+        updateDisplay();
+
+    }
+
+    private Calendar getCalendar() {
+        Calendar cal = Calendar.getInstance();
+        cal.set(Calendar.YEAR, mYear);
+        cal.set(Calendar.MONTH, mMonth);
+        cal.set(Calendar.DAY_OF_MONTH, mDay);
+        cal.set(Calendar.HOUR_OF_DAY, mHour);
+        cal.set(Calendar.MINUTE, mMinute);
+        return cal;
+    }
+
+    private void updateDisplay() {
+        String dateStr =  new StringBuilder()
+            .append(mYear).append("年")
+            .append(mMonth + 1).append("月")
+            .append(mDay).append("日")
+            .toString();
+        mPickDate.setText(dateStr);
+
+        String timeStr =  new StringBuilder()
+            .append(pad(mHour))
+            .append(":")
+            .append(pad(mMinute)).toString();
+        mPickTime.setText(timeStr);
+    }
+
+    private static String pad(int c) {
+        if (c >= 10)
+            return String.valueOf(c);
+        else
+            return "0" + String.valueOf(c);
+    }
+
+    public void submit(View view) {
+        Map<String, String> map = ViewUtils.collectForm(mForm);
+        if (map.get("pick_time") != null && map.get("pick_date") != null) {
+            // map.put("start_off_time", getCalendar().toString());
+            map.put("start_off_time", "1232-01-02");
+        }
+
+        //Mock value
+        map.put("start_lat", "120.12");
+        map.put("start_lng", "80.12");
+        map.put("dest_lat", "120.12");
+        map.put("dest_lng", "80.12");
+
+        RequestParams params = ViewUtils.toRequestParams(map);
+        HttpHandler handler = new HttpHandler(this);
+        handler.post("rides", params);
+    }
+
+    @Override
+    protected Dialog onCreateDialog(int id) {
+        switch (id) {
+        case TIME_DIALOG_ID:
+            return new TimePickerDialog(this,
+                                        mTimeSetListener, mHour, mMinute, false);
+        case DATE_DIALOG_ID:
+            return new DatePickerDialog(this,
+                                        mDateSetListener,
+                                        mYear, mMonth, mDay);
+        }
+        return null;
+    }
+    private DatePickerDialog.OnDateSetListener mDateSetListener =
+        new DatePickerDialog.OnDateSetListener() {
+
+            public void onDateSet(DatePicker view, int year, int monthOfYear,
+                                  int dayOfMonth) {
+                mYear = year;
+                mMonth = monthOfYear;
+                mDay = dayOfMonth;
+                updateDisplay();
+            }
+        };
+
+    private TimePickerDialog.OnTimeSetListener mTimeSetListener =
+        new TimePickerDialog.OnTimeSetListener() {
+
+            public void onTimeSet(TimePicker view, int hourOfDay, int minute) {
+                mHour = hourOfDay;
+                mMinute = minute;
+                updateDisplay();
+            }
+        };
+
 }

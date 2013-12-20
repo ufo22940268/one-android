@@ -9,6 +9,7 @@ import android.os.IBinder;
 /**
  * Authenticator service that returns a subclass of AbstractAccountAuthenticator in onBind()
  */
+
 public class AccountAuthenticatorService extends Service {
 
     private static BootstrapAccountAuthenticator AUTHENTICATOR = null;

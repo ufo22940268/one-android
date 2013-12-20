@@ -19,6 +19,8 @@ import java.util.*;
 
 public class ValueSpinner extends Spinner {
 
+    //The first item of each row is the label, and
+    //the second is the value correspond to this label.
     public String[][] mMap;
 
 
@@ -37,6 +39,16 @@ public class ValueSpinner extends Spinner {
         ArrayAdapter adapter = new ArrayAdapter(getContext(),
                                                 android.R.layout.simple_spinner_item, keys);
         setAdapter(adapter);
+    }
+
+    public String toValue(String label) {
+        for (int i = 0; i < mMap.length; i++) {
+            if (mMap[i][0].equals(label)) {
+                return mMap[i][1];
+            }
+        }
+
+        return null;
     }
 
 }

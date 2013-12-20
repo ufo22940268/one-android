@@ -48,4 +48,9 @@
   <color name="menu_yellow">#d7b517</color>
   <color name="menu_green">#77be07</color>
   <color name="menu_dark">#666666</color>
+  <drawable name="transparent">#00000000</drawable>
+
+  <color name="second_grey">#ffeeeeee</color>
+  <color name="card_white">#ffffffff</color>
+  <color name="card_shadow">#8c666666</color>
 </resources>

@@ -7,15 +7,8 @@ import me.biubiubiu.one.authenticator.BootstrapAuthenticatorActivity;
 import me.biubiubiu.one.authenticator.LogoutService;
 import me.biubiubiu.one.core.CheckIn;
 import me.biubiubiu.one.core.TimerService;
-import me.biubiubiu.one.ui.BootstrapTimerActivity;
-import me.biubiubiu.one.ui.CarouselActivity;
-import me.biubiubiu.one.ui.CheckInsListFragment;
-import me.biubiubiu.one.ui.ItemListFragment;
-import me.biubiubiu.one.ui.NewsActivity;
-import me.biubiubiu.one.ui.NewsListFragment;
-import me.biubiubiu.one.ui.UserActivity;
-import me.biubiubiu.one.ui.UserListFragment;
 import me.biubiubiu.one.ui.*;
+
 import com.squareup.otto.Bus;
 
 import javax.inject.Singleton;
@@ -42,7 +35,9 @@ import dagger.Provides;
                 UserActivity.class,
                 UserListFragment.class,
                 TimerService.class,
-                PostRideActivity.class
+                PostRideActivity.class,
+                RidesActivity.class,
+                PageFragment.class,
         }
 
 )

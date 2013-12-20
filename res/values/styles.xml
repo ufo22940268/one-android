@@ -24,8 +24,8 @@
   </style>
 
   <style name="AvatarLarge">
-    <item name="android:layout_width">32dp</item>
-    <item name="android:layout_height">32dp</item>
+    <item name="android:layout_width">60dp</item>
+    <item name="android:layout_height">60dp</item>
   </style>
 
   <style name="AvatarMedium">

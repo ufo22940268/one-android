@@ -36,12 +36,47 @@
             />
 
         <com.andreabaccega.widget.FormEditText
-            android:id="@+id/name"
+            android:id="@+id/title"
             style="@style/form_field"
             />
 
       </TableRow>
 
+      <TableRow
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:paddingTop="10dip"
+          android:paddingBottom="10dip"
+          >
+
+        <TextView
+            android:text="出发日期"
+            style="@style/form_label"
+            />
+
+        <Button
+            android:id="@+id/pick_date"
+            />
+
+      </TableRow>
+
+      <TableRow
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:paddingTop="10dip"
+          android:paddingBottom="10dip"
+          >
+
+        <TextView
+            android:text="出发时间"
+            style="@style/form_label"
+            />
+
+        <Button
+            android:id="@+id/pick_time"
+            />
+
+      </TableRow>
       <TableRow
           android:layout_width="match_parent"
           android:layout_height="wrap_content"
@@ -162,7 +197,7 @@
         android:layout_marginTop="15dp"
         android:background="@drawable/button_background_states"
         android:gravity="center"
-        android:onClick="handleLogin"
+        android:onClick="submit"
         android:padding="10dp"
         android:text="完成"
         android:textColor="@color/text"

@@ -1,6 +1,7 @@
-
-
 package me.biubiubiu.one;
+import com.novoda.imageloader.core.ImageManager;
+import com.novoda.imageloader.core.LoaderSettings.SettingsBuilder;
+import com.novoda.imageloader.core.cache.LruBitmapCache;
 
 import static android.os.Build.VERSION.SDK_INT;
 import static android.os.Build.VERSION_CODES.FROYO;
@@ -10,14 +11,13 @@ import android.content.Context;
 
 import com.github.kevinsawicki.http.HttpRequest;
 
-import dagger.ObjectGraph;
-
 /**
  * one application
  */
 public class BootstrapApplication extends Application {
 
     private static BootstrapApplication instance;
+    private static ImageManager mImageManager;
 
     /**
      * Create main application
@@ -40,6 +40,11 @@ public class BootstrapApplication extends Application {
 
     }
 
+    public static ImageManager getImageLoader() {
+        return mImageManager;
+    }
+
+
     @Override
     public void onCreate() {
         super.onCreate();
@@ -48,6 +53,9 @@ public class BootstrapApplication extends Application {
 
         // Perform injection
         Injector.init(getRootModule(), this);
+        mImageManager = new ImageManager(this, new SettingsBuilder()
+                                         .withCacheManager(new LruBitmapCache(this))
+                                         .build(this));
 
     }
 

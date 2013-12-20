@@ -1,35 +1,30 @@
 package me.biubiubiu.one.ui;
 
-import android.accounts.OperationCanceledException;
-import android.content.Intent;
-import android.os.Bundle;
-import android.support.v4.app.FragmentActivity;
-import android.support.v4.view.ViewPager;
-import android.view.View;
-import android.widget.*;
-
-import com.actionbarsherlock.view.MenuItem;
-import com.actionbarsherlock.view.Window;
+import javax.inject.Inject;
 
 import me.biubiubiu.one.BootstrapServiceProvider;
 import me.biubiubiu.one.R;
-import me.biubiubiu.one.core.BootstrapService;
-import me.biubiubiu.one.util.SafeAsyncTask;
 
-import com.viewpagerindicator.TitlePageIndicator;
+import net.simonvt.menudrawer.MenuDrawer;
+import net.simonvt.menudrawer.MenuDrawer.OnDrawerStateChangeListener;
 
-import javax.inject.Inject;
+import android.content.Intent;
+import android.os.Bundle;
+import android.view.View;
+import android.widget.AdapterView;
+import android.widget.GridView;
 
 import butterknife.InjectView;
 import butterknife.Views;
-import net.simonvt.menudrawer.MenuDrawer;
-import net.simonvt.menudrawer.MenuDrawer.OnDrawerStateChangeListener;
+
+import com.actionbarsherlock.view.MenuItem;
+import com.actionbarsherlock.view.Window;
 
 
 /**
  * Activity to view the carousel and view pager indicator with fragments.
  */
-public class CarouselActivity extends BootstrapFragmentActivity implements OnDrawerStateChangeListener {
+public class CarouselActivity extends BootstrapFragmentActivity implements OnDrawerStateChangeListener, AdapterView.OnItemClickListener{
 
     @InjectView(R.id.grid) GridView menuLayout;
     @Inject BootstrapServiceProvider serviceProvider;
@@ -76,7 +71,7 @@ public class CarouselActivity extends BootstrapFragmentActivity implements OnDra
         Views.inject(this);
         BlockAdapter adapter = new BlockAdapter(this, TITLES, IMAGE_RES, IMAGE_BACKGROUND);
         menuLayout.setAdapter(adapter);
-
+        menuLayout.setOnItemClickListener(this);
         getSupportActionBar().setTitle("我要搭车");
     }
 
@@ -132,4 +127,19 @@ public class CarouselActivity extends BootstrapFragmentActivity implements OnDra
     public void onDrawerStateChange(int arg0, int arg1) {
         getSupportActionBar().setTitle("closed");
     }
+
+    @Override
+    public void onItemClick(AdapterView parent, View view, int pos, long id) {
+        switch (pos) {
+        case 1:
+            Intent intent = new Intent(this, RidesActivity.class);
+            startActivity(intent);
+            break;
+        case 3:
+            intent = new Intent(this, PostRideActivity.class);
+            startActivity(intent);
+            break;
+        }
+    }
+
 }

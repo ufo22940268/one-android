@@ -8,3 +8,9 @@
 - [ ] 起始和终点目标的
 * TODO 完成“看谁能带我”
   DEADLINE: <2013-12-19 Thu>
+* TODO 研究怎么在当前目录打开terminal
+* TODO 研究怎么用multi cursor的取消光标的功能
+* TODO emacs中etags使用哪一个比较好
+* TODO emacs中改变yasnippets的默认模板
+* TODO change language of mac os to english, to see if the java output has switched to english.
+* TODO Select a better frame of the page list item from cardslib project.
