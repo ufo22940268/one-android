@@ -154,6 +154,7 @@
 
     <activity android:name=".ui.NewsActivity" />
     <activity android:name=".ui.UserActivity" android:label="@string/app_name" />
+    <activity android:name=".ui.SearchResultActivity" />
     <service
         android:name="com.baidu.location.f"
         android:enabled="true"

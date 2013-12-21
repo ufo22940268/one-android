@@ -5,6 +5,7 @@ import me.biubiubiu.one.R;
 import me.biubiubiu.one.util.HttpHandler;
 
 import android.os.Bundle;
+import android.support.v4.app.Fragment;
 import android.widget.ImageView;
 
 import com.actionbarsherlock.view.MenuItem;
@@ -47,4 +48,9 @@ public class BaseActivity extends BootstrapFragmentActivity {
         view.setTag(imageTagFactory.build(url, this));
         imageManager.getLoader().load(view);
     }
+    protected void addContainerFragment(Fragment frag) {
+        getSupportFragmentManager()
+            .beginTransaction().add(R.id.container, frag).commit();
+    }
+
 }

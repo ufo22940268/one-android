@@ -36,4 +36,9 @@ public class BaseFragment extends SherlockFragment {
         view.setTag(imageTagFactory.build(url, getActivity()));
         imageManager.getLoader().load(view);
     }
+
+    protected void setActionBarTitle(String title) {
+        ((BaseActivity)getActivity()).getSupportActionBar().setTitle(title);
+    }
+
 }
