@@ -68,6 +68,44 @@
           >
 
         <TextView
+            android:text="起始地点"
+            style="@style/form_label"
+            />
+
+        <Button
+            android:id="@+id/start_loc"
+            android:onClick="clickLoc"
+            />
+
+      </TableRow>
+      
+      <TableRow
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:paddingTop="10dip"
+          android:paddingBottom="10dip"
+          >
+
+        <TextView
+            android:text="目的地"
+            style="@style/form_label"
+            />
+
+        <Button
+            android:id="@+id/dest_loc"
+            android:onClick="clickLoc"
+            />
+
+      </TableRow>
+      
+      <TableRow
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:paddingTop="10dip"
+          android:paddingBottom="10dip"
+          >
+
+        <TextView
             android:text="出发时间"
             style="@style/form_label"
             />

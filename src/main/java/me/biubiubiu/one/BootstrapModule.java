@@ -38,6 +38,8 @@ import dagger.Provides;
                 PostRideActivity.class,
                 RidesActivity.class,
                 PageFragment.class,
+                SearchRideFragment.class,
+                GetPositionActivity.class,
         }
 
 )

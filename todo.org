@@ -2,15 +2,32 @@
 * DONE 添加头像等用户信息
 * DONE 调整主界面中的GridView到周围都有相等的gap
 * DONE 导入formvalidator
-* TODO 完成“发布拼车服务器
+* DONE 完成“发布拼车服务器
   DEADLINE: <2013-12-20 Fri>
 - [X] 其他条目添加
 - [ ] 起始和终点目标的
-* TODO 完成“看谁能带我”
+* DONE 完成“看谁能带我”
   DEADLINE: <2013-12-19 Thu>
-* TODO 研究怎么在当前目录打开terminal
-* TODO 研究怎么用multi cursor的取消光标的功能
-* TODO emacs中etags使用哪一个比较好
-* TODO emacs中改变yasnippets的默认模板
-* TODO change language of mac os to english, to see if the java output has switched to english.
-* TODO Select a better frame of the page list item from cardslib project.
+* DONE 研究怎么在当前目录打开terminal
+* DONE 研究怎么用multi cursor的取消光标的功能
+* DONE emacs中etags使用哪一个比较好
+* DONE emacs中改变yasnippets的默认模板
+* DONE change language of mac os to english, to see if the java output has switched to english.
+* DONE Select a better frame of the page list item from cardslib project.
+
+<2013-12-21 Sat>
+* DONE 完成搜索
+* DONE 添加loading
+* DONE 添加百度地图取地点的功能
+* DONE 研究关于compilationbuffer的问题
+* TODO 添加form validate
+* TODO 搜索功能
+* TODO 用真实地图上获取的坐标
+* TODO 把默认的xml的mode改成sgml
+
+<2013-12-22 Sun>
+* TODO 添加翻页
+* TODO 详情界面
+
+* pending
+** TODO 地图选取坐标的时候只能够选取有label的坐标，所以要更改交互方式。

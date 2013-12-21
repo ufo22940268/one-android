@@ -1,8 +1,7 @@
 package me.biubiubiu.one.ui;
 
-import java.util.*;
-
-import com.loopj.android.http.RequestParams;
+import java.util.Calendar;
+import java.util.Map;
 
 import me.biubiubiu.one.R;
 import me.biubiubiu.one.ui.view.ValueSpinner;
@@ -11,18 +10,26 @@ import me.biubiubiu.one.util.ViewUtils;
 import android.app.DatePickerDialog;
 import android.app.Dialog;
 import android.app.TimePickerDialog;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.*;
-import android.util.*;
+import android.widget.Button;
+import android.widget.DatePicker;
+import android.widget.TableLayout;
+import android.widget.TextView;
+import android.widget.TimePicker;
 import butterknife.InjectView;
 import butterknife.Views;
 
+import com.loopj.android.http.RequestParams;
 
 /**
  * Activity to view the carousel and view pager indicator with fragments.
  */
 public class PostRideActivity extends BaseActivity  {
+
+    static public final int REQUEST_GET_LOCATION = 1;
+
 
     @InjectView(R.id.form) TableLayout mForm;
     @InjectView(R.id.price) TextView mPriceView;
@@ -123,6 +130,16 @@ public class PostRideActivity extends BaseActivity  {
         mPickTime.setText(timeStr);
     }
 
+    public void clickLoc(View view) {
+        pickLocation(view.getId());
+    }
+
+    private void pickLocation(int id) {
+        Intent intent = new Intent(this, GetPositionActivity.class);
+        intent.putExtra("view_id", id);
+        startActivityForResult(intent, REQUEST_GET_LOCATION);
+    }
+
     private static String pad(int c) {
         if (c >= 10)
             return String.valueOf(c);
@@ -183,4 +200,14 @@ public class PostRideActivity extends BaseActivity  {
             }
         };
 
+    @Override
+    protected void onActivityResult(int req, int arg1, Intent arg2) {
+        if (req == REQUEST_GET_LOCATION) {
+            int id = arg2.getIntExtra("view_id", 0);
+            String title = arg2.getStringExtra("title");
+            float lat = arg2.getFloatExtra("lat", 0);
+            float lng = arg2.getFloatExtra("lng", 0);
+            ((TextView)findViewById(id)).setText(title);
+        }
+    }
 }

@@ -54,7 +54,7 @@ public class RidesActivity extends BaseActivity  {
             if (position == 0) {
                 return new PageFragment();
             } else {
-                return new Fragment();
+                return new SearchRideFragment();
             }
         }
 

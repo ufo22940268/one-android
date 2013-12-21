@@ -131,7 +131,6 @@ public abstract class ItemListFragment<E> extends SherlockFragment
     /**
      * Configure list after view has been created
      *
-     * @param activity
      * @param listView
      */
     protected void configureList(Activity activity, ListView listView) {
