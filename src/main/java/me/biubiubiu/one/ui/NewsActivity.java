@@ -1,12 +1,10 @@
 package me.biubiubiu.one.ui;
 
 import static me.biubiubiu.one.core.Constants.Extra.NEWS_ITEM;
-import android.os.Bundle;
-import android.widget.TextView;
-
 import me.biubiubiu.one.R;
 import me.biubiubiu.one.core.News;
-
+import android.os.Bundle;
+import android.widget.TextView;
 import butterknife.InjectView;
 
 public class NewsActivity extends BootstrapActivity {

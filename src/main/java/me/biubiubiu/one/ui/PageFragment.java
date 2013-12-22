@@ -1,6 +1,5 @@
 package me.biubiubiu.one.ui;
 
-import java.util.EmptyStackException;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -17,10 +16,11 @@ import android.view.ViewGroup;
 import android.widget.ListView;
 
 import com.kanak.emptylayout.EmptyLayout;
+import com.markupartist.android.widget.PullToRefreshListView;
 
 public class PageFragment extends BaseFragment {
 
-    private ListView mListView;
+    private PullToRefreshListView mListView;
     private PageAdapter mAdapter;
     private EmptyLayout mEmptyLayout;
 
@@ -30,7 +30,7 @@ public class PageFragment extends BaseFragment {
         ViewGroup parent = (ViewGroup) inflater.inflate(R.layout.page_list,
                                                         container, false);
         Injector.inject(this);
-        mListView = (ListView)parent.findViewById(R.id.list);
+        mListView = (PullToRefreshListView)parent.findViewById(R.id.list);
         mAdapter = new PageAdapter(getActivity());
         mEmptyLayout = new EmptyLayout(getActivity(), mListView);
         mListView.setAdapter(mAdapter);

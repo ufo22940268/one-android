@@ -6,240 +6,242 @@
             android:layout_height="wrap_content"
             >
   <LinearLayout
-      android:layout_width="wrap_content"
-      android:layout_height="wrap_content"
-      android:orientation="vertical"
-      android:paddingLeft="6dip"
-      android:paddingRight="6dip"
-      >
+     android:layout_width="wrap_content"
+     android:layout_height="wrap_content"
+     android:orientation="vertical"
+     android:paddingLeft="6dip"
+     android:paddingRight="6dip"
+     >
 
 
     <TableLayout
-        android:id="@+id/form"
-        android:orientation="vertical"
-        android:layout_width="fill_parent"
-        android:layout_height="fill_parent"
-        android:stretchColumns="1"
-        android:divider="@drawable/divider"
-        >
+       android:id="@+id/form"
+       android:orientation="vertical"
+       android:layout_width="fill_parent"
+       android:layout_height="fill_parent"
+       android:stretchColumns="1"
+       android:divider="@drawable/divider"
+       >
 
       <TableRow
-          android:layout_width="match_parent"
-          android:layout_height="wrap_content"
-          android:paddingTop="10dip"
-          android:paddingBottom="10dip"
-          >
+         android:layout_width="match_parent"
+         android:layout_height="wrap_content"
+         android:paddingTop="10dip"
+         android:paddingBottom="10dip"
+         >
 
         <TextView
-            android:text="标题"
-            style="@style/form_label"
-            />
+           android:text="标题"
+           style="@style/form_label"
+           />
 
         <com.andreabaccega.widget.FormEditText
-            android:id="@+id/title"
-            style="@style/form_field"
-            />
+           android:id="@+id/title"
+           style="@style/form_field"
+           />
 
       </TableRow>
 
       <TableRow
-          android:layout_width="match_parent"
-          android:layout_height="wrap_content"
-          android:paddingTop="10dip"
-          android:paddingBottom="10dip"
-          >
+         android:layout_width="match_parent"
+         android:layout_height="wrap_content"
+         android:paddingTop="10dip"
+         android:paddingBottom="10dip"
+         >
 
         <TextView
-            android:text="出发日期"
-            style="@style/form_label"
-            />
+           android:text="出发日期"
+           style="@style/form_label"
+           />
 
         <Button
-            android:id="@+id/pick_date"
-            />
+           android:id="@+id/pick_date"
+           />
 
       </TableRow>
 
       <TableRow
-          android:layout_width="match_parent"
-          android:layout_height="wrap_content"
-          android:paddingTop="10dip"
-          android:paddingBottom="10dip"
-          >
+         android:layout_width="match_parent"
+         android:layout_height="wrap_content"
+         android:paddingTop="10dip"
+         android:paddingBottom="10dip"
+         >
 
         <TextView
-            android:text="起始地点"
-            style="@style/form_label"
-            />
+           android:text="起始地点"
+           style="@style/form_label"
+           />
+
+        <me.biubiubiu.one.ui.view.ValuePositionButton
+           android:id="@+id/start_loc"
+           android:onClick="clickLoc"
+           />
+
+      </TableRow>
+
+      <TableRow
+         android:layout_width="match_parent"
+         android:layout_height="wrap_content"
+         android:paddingTop="10dip"
+         android:paddingBottom="10dip"
+         >
+
+        <TextView
+           android:text="目的地"
+           style="@style/form_label"
+           />
+
+        <me.biubiubiu.one.ui.view.ValuePositionButton
+           android:id="@+id/dest_loc"
+           android:onClick="clickLoc"
+           />
+
+      </TableRow>
+
+      <TableRow
+         android:layout_width="match_parent"
+         android:layout_height="wrap_content"
+         android:paddingTop="10dip"
+         android:paddingBottom="10dip"
+         >
+
+        <TextView
+           android:text="出发时间"
+           style="@style/form_label"
+           />
 
         <Button
-            android:id="@+id/start_loc"
-            android:onClick="clickLoc"
-            />
-
-      </TableRow>
-      
-      <TableRow
-          android:layout_width="match_parent"
-          android:layout_height="wrap_content"
-          android:paddingTop="10dip"
-          android:paddingBottom="10dip"
-          >
-
-        <TextView
-            android:text="目的地"
-            style="@style/form_label"
-            />
-
-        <Button
-            android:id="@+id/dest_loc"
-            android:onClick="clickLoc"
-            />
-
-      </TableRow>
-      
-      <TableRow
-          android:layout_width="match_parent"
-          android:layout_height="wrap_content"
-          android:paddingTop="10dip"
-          android:paddingBottom="10dip"
-          >
-
-        <TextView
-            android:text="出发时间"
-            style="@style/form_label"
-            />
-
-        <Button
-            android:id="@+id/pick_time"
-            />
+           android:id="@+id/pick_time"
+           />
 
       </TableRow>
       <TableRow
-          android:layout_width="match_parent"
-          android:layout_height="wrap_content"
-          android:paddingTop="10dip"
-          android:paddingBottom="10dip"
-          >
+         android:layout_width="match_parent"
+         android:layout_height="wrap_content"
+         android:paddingTop="10dip"
+         android:paddingBottom="10dip"
+         >
 
         <TextView
-            android:text="可等待时间"
-            style="@style/form_label"
-            />
+           android:text="可等待时间"
+           style="@style/form_label"
+           />
 
         <me.biubiubiu.one.ui.view.ValueSpinner
-            android:id="@+id/wait_time"
-            />
+           android:id="@+id/wait_time"
+           />
 
       </TableRow>
 
       <TableRow
-          android:layout_width="match_parent"
-          android:layout_height="wrap_content"
-          android:paddingTop="10dip"
-          android:paddingBottom="10dip"
-          >
+         android:layout_width="match_parent"
+         android:layout_height="wrap_content"
+         android:paddingTop="10dip"
+         android:paddingBottom="10dip"
+         >
 
         <TextView
-            android:text="距离"
-            style="@style/form_label"
-            />
+           android:text="距离"
+           style="@style/form_label"
+           />
 
         <TextView
-            android:id="@+id/distance"
-            />
+           android:id="@+id/distance"
+           />
 
       </TableRow>
 
       <TableRow
-          android:layout_width="match_parent"
-          android:layout_height="wrap_content"
-          android:paddingTop="10dip"
-          android:paddingBottom="10dip"
-          >
+         android:layout_width="match_parent"
+         android:layout_height="wrap_content"
+         android:paddingTop="10dip"
+         android:paddingBottom="10dip"
+         >
 
         <TextView
-            android:text="单价"
-            style="@style/form_label"
-            />
+           android:text="单价"
+           style="@style/form_label"
+           />
 
         <EditText
-            android:id="@+id/price"
-            style="@style/form_field"
-            />
+           android:id="@+id/price"
+           android:inputType="number"
+           style="@style/form_field"
+           />
 
       </TableRow>
 
       <TableRow
-          android:layout_width="match_parent"
-          android:layout_height="wrap_content"
-          android:paddingTop="10dip"
-          android:paddingBottom="10dip"
-          >
+         android:layout_width="match_parent"
+         android:layout_height="wrap_content"
+         android:paddingTop="10dip"
+         android:paddingBottom="10dip"
+         >
 
         <TextView
-            android:text="可搭载人数"
-            style="@style/form_label"
-            />
+           android:text="可搭载人数"
+           style="@style/form_label"
+           />
 
         <me.biubiubiu.one.ui.view.ValueSpinner
-            android:id="@+id/people"
-            />
+           android:id="@+id/people"
+           />
 
       </TableRow>
 
       <TableRow
-          android:layout_width="match_parent"
-          android:layout_height="wrap_content"
-          android:paddingTop="10dip"
-          android:paddingBottom="10dip"
-          >
+         android:layout_width="match_parent"
+         android:layout_height="wrap_content"
+         android:paddingTop="10dip"
+         android:paddingBottom="10dip"
+         >
 
         <TextView
-            android:text="车辆类型"
-            style="@style/form_label"
-            />
+           android:text="车辆类型"
+           style="@style/form_label"
+           />
 
         <me.biubiubiu.one.ui.view.ValueSpinner
-            android:id="@+id/car_type"
-            />
+           android:id="@+id/car_type"
+           />
 
       </TableRow>
 
       <TableRow
-          android:layout_width="match_parent"
-          android:layout_height="wrap_content"
-          android:paddingTop="10dip"
-          android:paddingBottom="10dip"
-          >
+         android:layout_width="match_parent"
+         android:layout_height="wrap_content"
+         android:paddingTop="10dip"
+         android:paddingBottom="10dip"
+         >
 
         <TextView
-            android:text="备注"
-            style="@style/form_label"
-            />
+           android:text="备注"
+           style="@style/form_label"
+           />
 
 
         <com.andreabaccega.widget.FormEditText
-            android:id="@+id/comment"
-            />
+           android:id="@+id/comment"
+           />
 
       </TableRow>
 
     </TableLayout>
 
     <Button
-        android:id="@+id/submit"
-        style="@style/ShadowText"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_marginTop="15dp"
-        android:background="@drawable/button_background_states"
-        android:gravity="center"
-        android:padding="10dp"
-        android:text="完成"
-        android:textColor="@color/text"
-        android:textSize="20sp"
-        android:textStyle="bold" />
+       android:id="@+id/submit"
+       style="@style/ShadowText"
+       android:layout_width="match_parent"
+       android:layout_height="match_parent"
+       android:layout_marginTop="15dp"
+       android:background="@drawable/button_background_states"
+       android:gravity="center"
+       android:padding="10dp"
+       android:text="完成"
+       android:textColor="@color/text"
+       android:textSize="20sp"
+       android:onClick="submit"
+       android:textStyle="bold" />
 
   </LinearLayout>
 </ScrollView>

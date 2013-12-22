@@ -100,6 +100,8 @@ public class HttpHandler {
         showLoading();
         client.post(url, params, new MyAsyncHttpResponseHandler(new ResponseHandler() {
                 public void onSuccess(String result) {
+                    Toast.makeText(mContext,
+                                   "提交成功", Toast.LENGTH_LONG).show();
                 }
             }, 0));
     }

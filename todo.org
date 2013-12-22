@@ -25,10 +25,16 @@
 * DONE 把默认的xml的mode改成sgml
 
 <2013-12-22 Sun>
-* TODO 添加翻页
-* TODO 详情界面
-* TODO 添加form validate
-* TODO 寻找好的管理emacs tag table的插件(或者自己基于projectile-hook写一个选择tag table的功能)
+* 上午
+** DONE 坐标数据改成真实的数据
+** DONE 添加form validate
+** DONE 寻找好的管理emacs tag table的插件(或者自己基于projectile-hook写一个选择tag table的功能)
+** DONE 添加提交的时候的loading
+** DONE 研究eclim在import的时候会删除一些不该删除的android的import, 需要打开eclipse进行查看
+
+* 下午
+** TODO 详情界面
 
 * pending
+** TODO 添加翻页
 ** TODO 地图选取坐标的时候只能够选取有label的坐标，所以要更改交互方式。

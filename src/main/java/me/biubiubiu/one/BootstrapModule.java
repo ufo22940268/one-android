@@ -41,6 +41,7 @@ import dagger.Provides;
                 SearchRideFragment.class,
                 GetPositionActivity.class,
                 SearchResultActivity.class,
+                RideDetailActivity.class,
         }
 
 )

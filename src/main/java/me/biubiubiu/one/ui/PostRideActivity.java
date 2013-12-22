@@ -4,9 +4,13 @@ import java.util.Calendar;
 import java.util.Map;
 
 import me.biubiubiu.one.R;
+import me.biubiubiu.one.ui.view.ValuePositionButton;
 import me.biubiubiu.one.ui.view.ValueSpinner;
 import me.biubiubiu.one.util.HttpHandler;
+import me.biubiubiu.one.util.LocationUtils;
+import me.biubiubiu.one.util.TableValidator;
 import me.biubiubiu.one.util.ViewUtils;
+
 import android.app.DatePickerDialog;
 import android.app.Dialog;
 import android.app.TimePickerDialog;
@@ -18,6 +22,7 @@ import android.widget.DatePicker;
 import android.widget.TableLayout;
 import android.widget.TextView;
 import android.widget.TimePicker;
+
 import butterknife.InjectView;
 import butterknife.Views;
 
@@ -35,8 +40,11 @@ public class PostRideActivity extends BaseActivity  {
     @InjectView(R.id.price) TextView mPriceView;
     @InjectView(R.id.people) ValueSpinner mPeopleView;
     @InjectView(R.id.car_type) ValueSpinner mCarTypeView;
+    @InjectView(R.id.start_loc) ValuePositionButton mStartLocView;
+    @InjectView(R.id.dest_loc) ValuePositionButton mDestLocView;
     @InjectView(R.id.wait_time) ValueSpinner mWaitTimeView;
     @InjectView(R.id.pick_date) Button mPickDate;
+    @InjectView(R.id.distance) TextView mDistanceView;
     @InjectView(R.id.pick_time) Button mPickTime;
 
     // date and time
@@ -148,17 +156,20 @@ public class PostRideActivity extends BaseActivity  {
     }
 
     public void submit(View view) {
+        if (!new TableValidator(mForm).validate()) {
+            return;
+        }
+        
         Map<String, String> map = ViewUtils.collectForm(mForm);
         if (map.get("pick_time") != null && map.get("pick_date") != null) {
             // map.put("start_off_time", getCalendar().toString());
             map.put("start_off_time", "1232-01-02");
         }
 
-        //Mock value
-        map.put("start_lat", "120.12");
-        map.put("start_lng", "80.12");
-        map.put("dest_lat", "120.12");
-        map.put("dest_lng", "80.12");
+        map.put("start_lat", String.valueOf(mStartLocView.getLat()));
+        map.put("start_lng", String.valueOf(mStartLocView.getLng()));
+        map.put("dest_lat", String.valueOf(mDestLocView.getLat()));
+        map.put("dest_lng", String.valueOf(mDestLocView.getLng()));
 
         RequestParams params = ViewUtils.toRequestParams(map);
         HttpHandler handler = new HttpHandler(this);
@@ -207,7 +218,28 @@ public class PostRideActivity extends BaseActivity  {
             String title = arg2.getStringExtra("title");
             float lat = arg2.getFloatExtra("lat", 0);
             float lng = arg2.getFloatExtra("lng", 0);
-            ((TextView)findViewById(id)).setText(title);
+            ValuePositionButton vpb = null;
+            if (id == R.id.start_loc) {
+                vpb = mStartLocView;
+            } else {
+                vpb = mDestLocView;
+            }
+            
+            vpb.setText(title);
+            vpb.setLat(lat);
+            vpb.setLng(lng);
+
+            if (mStartLocView.getLat() != 0 && mDestLocView.getLat() != 0) {
+                updateDistance();
+            }
         }
+    }
+
+    private void updateDistance() {
+        int distance = LocationUtils.distance(mStartLocView.getLat(),
+                                              mStartLocView.getLng(),
+                                              mDestLocView.getLat(),
+                                              mDestLocView.getLng());
+        mDistanceView.setText(String.valueOf(distance) + "米");
     }
 }
