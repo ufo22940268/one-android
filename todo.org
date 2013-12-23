@@ -33,8 +33,16 @@
 ** DONE 研究eclim在import的时候会删除一些不该删除的android的import, 需要打开eclipse进行查看
 
 * 下午
-** TODO 详情界面
 
+
+<2013-12-23 Mon>
+* 上午
+** TODO 详情界面的服务器端和客户端开发好
+** TODO 问他们要detail界面的背景，然后加上去
+** TODO 做好关于搜索界面的功能
+** TODO 做好提交用户信息的表单的界面。
+   
 * pending
 ** TODO 添加翻页
 ** TODO 地图选取坐标的时候只能够选取有label的坐标，所以要更改交互方式。
+** TODO 往数据库中插入一些不错的数据。

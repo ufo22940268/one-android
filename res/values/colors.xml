@@ -53,4 +53,8 @@
   <color name="second_grey">#ffeeeeee</color>
   <color name="card_white">#ffffffff</color>
   <color name="card_shadow">#8c666666</color>
+  <color name="bthumbnail_background">#ffffffff</color>
+  <color name="bthumbnail_placeholder">#e9e9e9</color>
+  <color name="bthumbnail_border">#dbdbdb</color>
+  <color name="bthumbnail_font">#7e7e7e</color>
 </resources>

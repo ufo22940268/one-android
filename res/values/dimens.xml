@@ -5,4 +5,8 @@
   <dimen name="list_card_padding_right">8dp</dimen>
   <dimen name="list_card_padding_bottom">6dp</dimen>
   <dimen name="list_card_padding_top">2dp</dimen>
+  <dimen name="padding_micro">4dp</dimen>
+  <dimen name="padding_small">8dp</dimen>
+  <dimen name="padding_medium">12dp</dimen>
+  <dimen name="padding_large">16dp</dimen>
 </resources>

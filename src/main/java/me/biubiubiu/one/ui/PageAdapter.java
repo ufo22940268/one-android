@@ -3,6 +3,8 @@ package me.biubiubiu.one.ui;
 import java.util.List;
 import java.util.Map;
 
+import java.util.Stack;
+
 import me.biubiubiu.one.R;
 import me.biubiubiu.one.ui.*;
 
@@ -26,6 +28,10 @@ public class PageAdapter extends BaseAdapter {
     public void loadData(List<Map<String, String>> data) {
         mData = data;
         notifyDataSetChanged();
+    }
+
+    public Map<String, String> getItemData(int position) {
+        return mData.get(position);
     }
 
 

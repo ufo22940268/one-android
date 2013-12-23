@@ -31,19 +31,19 @@
        android:layout_marginLeft="6dip"
        android:layout_alignParentBottom="true"
        >
-      
+
       <!-- first line -->
       <LinearLayout
          android:layout_width="wrap_content"
          android:orientation="horizontal"
          android:layout_height="wrap_content"
          >
-        
+
         <TextView
            android:id="@+id/name"
            android:layout_width="wrap_content"
            android:layout_height="wrap_content"
-           android:textColor="#fff"
+           android:textColor="#000"
            android:text="斯塔曼"
            />
 
@@ -65,6 +65,7 @@
          android:layout_width="wrap_content"
          android:layout_height="wrap_content"
          android:text="谁要一起去下沙，我可以带"
+         android:textColor="#000"
          />
 
       <!-- third line -->
@@ -74,11 +75,39 @@
          android:orientation="horizontal"
          >
 
-        <Button
+        <TextView
            android:id="@+id/view_map"
            android:layout_width="wrap_content"
            android:layout_height="wrap_content"
+           android:layout_gravity="center_vertical"
+           android:paddingRight="6dip"
+           android:drawableLeft="@drawable/ic_action_place"
            android:text="看地图"
+           android:background="@drawable/black_button_background"
+           android:gravity="center_vertical"
+           android:textColor="#fff"
+           />
+
+        <TextView
+           android:id="@+id/request_ride"
+           android:layout_width="50dp"
+           android:layout_height="50dp"
+           android:layout_marginLeft="15dp"
+           android:gravity="center"
+           android:textColor="#fff"
+           android:background="@drawable/red_round_button"
+           android:text="邀请搭车"
+           />
+
+        <TextView
+           android:id="@+id/message"
+           android:layout_width="50dp"
+           android:layout_height="50dp"
+           android:layout_marginLeft="6dp"
+           android:gravity="center"
+           android:textColor="#fff"
+           android:background="@drawable/orange_round_button"
+           android:text="发起会话"
            />
 
       </LinearLayout>
@@ -86,5 +115,85 @@
     </LinearLayout>
 
   </RelativeLayout>
+
+  <!-- content -->
+  <LinearLayout
+     android:layout_width="match_parent"
+     android:layout_height="0dip"
+     android:layout_weight="1"
+     android:orientation="vertical"
+     >
+
+    <!-- section 1 -->
+    <LinearLayout
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content"
+       android:orientation="vertical"
+       android:background="@drawable/detail_item_background"
+       android:layout_marginLeft="20dip"
+       android:layout_marginRight="20dip"
+       android:layout_marginTop="10dip"
+       android:layout_marginBottom="10dip"
+       >
+
+      <TextView
+         android:id="@+id/start_addr"
+         android:layout_width="wrap_content"
+         android:layout_height="wrap_content"
+         android:text="杭州"
+         />
+
+      <TextView
+         android:id="@+id/dest_addr"
+         android:layout_width="wrap_content"
+         android:layout_height="wrap_content"
+         android:text=""
+         />
+
+      <TextView
+         android:id="@+id/start_off_time"
+         android:layout_width="wrap_content"
+         android:layout_height="wrap_content"
+         android:text=""
+         />
+
+      <TextView
+         android:id="@+id/wait_time"
+         android:layout_width="wrap_content"
+         android:layout_height="wrap_content"
+         android:text="30分钟"
+         />
+
+    </LinearLayout>
+
+    <!-- section 2 -->
+    <LinearLayout
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content"
+       android:orientation="vertical"
+       android:background="@drawable/detail_item_background"
+       android:layout_marginLeft="20dip"
+       android:layout_marginRight="20dip"
+       android:layout_marginTop="10dip"
+       android:layout_marginBottom="10dip"
+       >
+
+      <TextView
+         android:id="@+id/people"
+         android:layout_width="wrap_content"
+         android:layout_height="wrap_content"
+         android:text="3人"
+         />
+
+      <TextView
+         android:id="@+id/car_type"
+         android:layout_width="wrap_content"
+         android:layout_height="wrap_content"
+         android:text="自驾车"
+         />
+
+    </LinearLayout>
+
+  </LinearLayout>
 
 </LinearLayout>

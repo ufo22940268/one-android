@@ -52,7 +52,7 @@ public class RidesActivity extends BaseActivity  {
         @Override
         public Fragment getItem(int position) {
             if (position == 0) {
-                return new PageFragment();
+                return new RidePageFragment();
             } else {
                 return new SearchRideFragment();
             }

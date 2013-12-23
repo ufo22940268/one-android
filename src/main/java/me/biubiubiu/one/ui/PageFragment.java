@@ -20,8 +20,8 @@ import com.markupartist.android.widget.PullToRefreshListView;
 
 public class PageFragment extends BaseFragment {
 
-    private PullToRefreshListView mListView;
-    private PageAdapter mAdapter;
+    public PullToRefreshListView mListView;
+    protected PageAdapter mAdapter;
     private EmptyLayout mEmptyLayout;
 
     @Override
