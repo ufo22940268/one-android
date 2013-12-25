@@ -44,7 +44,6 @@
            android:layout_width="wrap_content"
            android:layout_height="wrap_content"
            android:textColor="#000"
-           android:text="斯塔曼"
            />
 
         <RatingBar android:id="@+id/small_ratingbar"
@@ -64,7 +63,6 @@
          android:id="@+id/user_status"
          android:layout_width="wrap_content"
          android:layout_height="wrap_content"
-         android:text="谁要一起去下沙，我可以带"
          android:textColor="#000"
          />
 
@@ -86,6 +84,7 @@
            android:background="@drawable/black_button_background"
            android:gravity="center_vertical"
            android:textColor="#fff"
+           android:onClick="onViewMap"
            />
 
         <TextView
@@ -140,7 +139,6 @@
          android:id="@+id/start_addr"
          android:layout_width="wrap_content"
          android:layout_height="wrap_content"
-         android:text="杭州"
          />
 
       <TextView
