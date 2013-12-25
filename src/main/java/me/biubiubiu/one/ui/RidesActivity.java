@@ -1,7 +1,10 @@
 package me.biubiubiu.one.ui;
 
 import me.biubiubiu.one.R;
+import me.biubiubiu.one.core.Constants;
+import me.biubiubiu.one.ui.view.ValuePositionButton;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
@@ -31,11 +34,9 @@ public class RidesActivity extends BaseActivity  {
     protected void onCreate(Bundle savedInstanceState) {
 
         super.onCreate(savedInstanceState);
-
         setContentView(R.layout.rides);
         getSupportActionBar().setTitle("看谁能带我");
         Views.inject(this);
-
         if (mAdapter == null) {
             mAdapter = new ContentAdapter(getSupportFragmentManager());
         }
@@ -66,6 +67,21 @@ public class RidesActivity extends BaseActivity  {
         @Override
         public int getCount() {
             return TITLES.length;
+        }
+    }
+
+    @Override
+    protected void onActivityResult(int req, int resultCode, Intent arg2) {
+        if (req == Constants.REQUEST_GET_LOCATION && resultCode == RESULT_OK) {
+            int id = arg2.getIntExtra("view_id", 0);
+            String title = arg2.getStringExtra("title");
+            float lat = arg2.getFloatExtra("lat", 0);
+            float lng = arg2.getFloatExtra("lng", 0);
+            ValuePositionButton vpb = (ValuePositionButton)findViewById(id);
+
+            vpb.setText(title);
+            vpb.setLat(lat);
+            vpb.setLng(lng);
         }
     }
 }

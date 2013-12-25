@@ -73,8 +73,8 @@ public class CarouselActivity extends BootstrapFragmentActivity implements OnDra
         menuLayout.setAdapter(adapter);
         menuLayout.setOnItemClickListener(this);
         getSupportActionBar().setTitle("我要搭车");
+        setNavListeners();
     }
-
 
     @Override
     protected void onResume() {
@@ -82,19 +82,12 @@ public class CarouselActivity extends BootstrapFragmentActivity implements OnDra
     }
 
     private void setNavListeners() {
-
-        menuDrawer.findViewById(R.id.home).setOnClickListener(new View.OnClickListener() {
+        menuDrawer.findViewById(R.id.profile).setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
                     menuDrawer.toggleMenu();
-                }
-            });
-
-        menuDrawer.findViewById(R.id.timer).setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    menuDrawer.toggleMenu();
-                    navigateToTimer();
+                    Intent intent = new Intent(CarouselActivity.this, ProfileActivity.class);
+                    startActivity(intent);
                 }
             });
     }
@@ -105,17 +98,9 @@ public class CarouselActivity extends BootstrapFragmentActivity implements OnDra
         case android.R.id.home:
             menuDrawer.toggleMenu();
             return true;
-        case R.id.timer:
-            navigateToTimer();
-            return true;
         default:
             return super.onOptionsItemSelected(item);
         }
-    }
-
-    private void navigateToTimer() {
-        final Intent i = new Intent(this, BootstrapTimerActivity.class);
-        startActivity(i);
     }
 
     @Override

@@ -4,6 +4,7 @@ import me.biubiubiu.one.BootstrapApplication;
 import me.biubiubiu.one.R;
 import me.biubiubiu.one.util.HttpHandler;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.widget.ImageView;
@@ -27,6 +28,10 @@ public class BaseActivity extends BootstrapFragmentActivity {
         imageTagFactory.setAnimation(R.anim.fade_in);
         imageTagFactory.setSaveThumbnail(true);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+    }
+
+    protected void setActionBarTitle(String title) {
+        this.getSupportActionBar().setTitle(title);
     }
 
     @Override
@@ -53,4 +58,12 @@ public class BaseActivity extends BootstrapFragmentActivity {
             .beginTransaction().add(R.id.container, frag).commit();
     }
 
+    public void startActivityClass(Class cls) {
+        Intent intent  = new Intent(this, cls);
+        startActivity(intent);
+    }
+
+    protected BootstrapApplication getMyApp() {
+        return (BootstrapApplication)getApplication();
+    }
 }

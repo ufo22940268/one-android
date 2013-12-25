@@ -6,6 +6,7 @@
             android:layout_height="wrap_content"
             >
   <LinearLayout
+     android:id="@+id/test"
      android:layout_width="wrap_content"
      android:layout_height="wrap_content"
      android:orientation="vertical"
@@ -22,6 +23,7 @@
        android:stretchColumns="1"
        android:divider="@drawable/divider"
        >
+
       <TableRow
          android:layout_width="match_parent"
          android:layout_height="wrap_content"
@@ -30,16 +32,72 @@
          >
 
         <TextView
-           android:text="搜索类型"
+           android:text="昵称"
+           style="@style/form_label"
+           />
+
+
+        <com.andreabaccega.widget.FormEditText
+           android:id="@+id/nickname"
+           />
+
+      </TableRow>
+      <TableRow
+         android:layout_width="match_parent"
+         android:layout_height="wrap_content"
+         android:paddingTop="10dip"
+         android:paddingBottom="10dip"
+         >
+
+        <TextView
+           android:text="个性签名"
+           style="@style/form_label"
+           />
+
+
+        <com.andreabaccega.widget.FormEditText
+           android:id="@+id/status"
+           />
+
+      </TableRow>
+
+      <TableRow
+         android:layout_width="match_parent"
+         android:layout_height="wrap_content"
+         android:paddingTop="10dip"
+         android:paddingBottom="10dip"
+         >
+
+        <TextView
+           android:text="所在地"
+           style="@style/form_label"
+           />
+
+        <me.biubiubiu.one.ui.view.ValuePositionButton
+           android:id="@+id/my_loc"
+           android:onClick="clickLoc"
+           />
+
+      </TableRow>
+      
+      <TableRow
+         android:layout_width="match_parent"
+         android:layout_height="wrap_content"
+         android:paddingTop="10dip"
+         android:paddingBottom="10dip"
+         >
+
+        <TextView
+           android:text="性别"
            style="@style/form_label"
            />
 
         <me.biubiubiu.one.ui.view.ValueSpinner
-           android:id="@+id/type"
+           android:id="@+id/sex"
            />
 
       </TableRow>
-
+      
       <TableRow
          android:layout_width="match_parent"
          android:layout_height="wrap_content"
@@ -48,70 +106,16 @@
          >
 
         <TextView
-           android:text="出发日期"
+           android:text="年龄段"
            style="@style/form_label"
            />
 
-        <me.biubiubiu.one.ui.view.ValueDateView
-           android:id="@+id/pick_date"
+        <me.biubiubiu.one.ui.view.ValueSpinner
+           android:id="@+id/age_segment"
            />
 
       </TableRow>
-
-      <TableRow
-         android:layout_width="match_parent"
-         android:layout_height="wrap_content"
-         android:paddingTop="10dip"
-         android:paddingBottom="10dip"
-         >
-
-        <TextView
-           android:text="出发时间"
-           style="@style/form_label"
-           />
-
-        <me.biubiubiu.one.ui.view.ValueTimeView
-           android:id="@+id/pick_time"
-           />
-
-      </TableRow>
-
-      <TableRow
-         android:layout_width="match_parent"
-         android:layout_height="wrap_content"
-         android:paddingTop="10dip"
-         android:paddingBottom="10dip"
-         >
-
-        <TextView
-           android:text="起始地点"
-           style="@style/form_label"
-           />
-
-        <me.biubiubiu.one.ui.view.ValuePositionButton
-           android:id="@+id/start_loc"
-           />
-
-      </TableRow>
-
-      <TableRow
-         android:layout_width="match_parent"
-         android:layout_height="wrap_content"
-         android:paddingTop="10dip"
-         android:paddingBottom="10dip"
-         >
-
-        <TextView
-           android:text="目的地"
-           style="@style/form_label"
-           />
-
-        <me.biubiubiu.one.ui.view.ValuePositionButton
-           android:id="@+id/dest_loc"
-           />
-
-      </TableRow>
-
+      
     </TableLayout>
 
     <Button
@@ -126,8 +130,8 @@
        android:text="完成"
        android:textColor="@color/text"
        android:textSize="20sp"
+       android:onClick="submit"
        android:textStyle="bold" />
 
   </LinearLayout>
-
 </ScrollView>

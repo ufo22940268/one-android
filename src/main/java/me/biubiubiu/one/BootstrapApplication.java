@@ -107,8 +107,9 @@ public class BootstrapApplication extends Application {
             }
             else{
                 // BootstrapApplication.getInstance().m_bKeyRight = true;
-                Toast.makeText(BootstrapApplication.getInstance().getApplicationContext(),
-                               "key认证成功", Toast.LENGTH_LONG).show();
+                // Toast.makeText(BootstrapApplication.getInstance().getApplicationContext(),
+                //                "key认证成功", Toast.LENGTH_LONG).show()
+                    // ;
             }
         }
     }

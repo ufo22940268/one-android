@@ -51,4 +51,8 @@ public class ValueSpinner extends Spinner {
         return null;
     }
 
+    public String getValue() {
+        return mMap[getSelectedItemPosition()][1];
+    }
+
 }

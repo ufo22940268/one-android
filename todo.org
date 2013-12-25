@@ -35,14 +35,30 @@
 * 下午
 
 
-<2013-12-23 Mon>
-* 上午
-** TODO 详情界面的服务器端和客户端开发好
-** TODO 问他们要detail界面的背景，然后加上去
-** TODO 做好关于搜索界面的功能
-** TODO 做好提交用户信息的表单的界面。
+* <2013-12-23 Mon>
+** 上午
+*** DONE 详情界面的服务器端和客户端开发好
+*** DONE 问他们要detail界面的背景，然后加上去
    
+** 下午
+*** DONE 做好提交用户信息的表单的界面。
+
+
+* <2013-12-24 Tue>
+** 上午
+*** TODO 研究mac下启动genymotion
+*** TODO 做好关于搜索界面的功能
+
+** 下午
+*** TODO 搜索类型的完善
+*** TODO 调整spinner高度
+*** TODO 添加上传头像的功能
+*** TODO 开始着手评价和信息功能
+*** TODO 把detail中的信息填写上去
+*** TODO detail中的地图显示功能
+*** TODO vim中的gd功能在emacs中如何实现
 * pending
 ** TODO 添加翻页
 ** TODO 地图选取坐标的时候只能够选取有label的坐标，所以要更改交互方式。
 ** TODO 往数据库中插入一些不错的数据。
+** TODO http://stackoverflow.com/questions/3147361/how-to-use-emacs-as-my-java-ide 有时间的时候试试

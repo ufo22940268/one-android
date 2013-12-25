@@ -16,11 +16,11 @@ import android.view.ViewGroup;
 import android.widget.ListView;
 
 import com.kanak.emptylayout.EmptyLayout;
-import com.markupartist.android.widget.PullToRefreshListView;
+//import com.markupartist.android.widget.PullToRefreshListView;
 
 public class PageFragment extends BaseFragment {
 
-    public PullToRefreshListView mListView;
+    public ListView mListView;
     protected PageAdapter mAdapter;
     private EmptyLayout mEmptyLayout;
 
@@ -30,7 +30,7 @@ public class PageFragment extends BaseFragment {
         ViewGroup parent = (ViewGroup) inflater.inflate(R.layout.page_list,
                                                         container, false);
         Injector.inject(this);
-        mListView = (PullToRefreshListView)parent.findViewById(R.id.list);
+        mListView = (ListView)parent.findViewById(R.id.list);
         mAdapter = new PageAdapter(getActivity());
         mEmptyLayout = new EmptyLayout(getActivity(), mListView);
         mListView.setAdapter(mAdapter);

@@ -6,6 +6,8 @@ package me.biubiubiu.one.core;
  * Bootstrap constants
  */
 public class Constants {
+    
+    static public final int REQUEST_GET_LOCATION = 1;
 
     public static class Auth {
         private Auth() {}

@@ -1,30 +1,35 @@
 package me.biubiubiu.one.ui.view;
 
-import android.util.*;
-import android.widget.*;
-import android.view.*;
-import android.content.*;
-import android.app.*;
-import android.os.*;
-import android.text.*;
-import android.database.*;
-import android.net.*;
-import android.opengl.*;
-import android.graphics.*;
-import android.view.animation.*;
-import android.text.TextUtils;
+import me.biubiubiu.one.core.Constants;
+import me.biubiubiu.one.ui.GetPositionActivity;
 
-import java.lang.reflect.Method;
-import java.util.*;
+import android.app.Activity;
+import android.content.Context;
+import android.content.Intent;
+import android.util.AttributeSet;
+import android.view.View;
+import android.widget.Button;
 
-public class ValuePositionButton extends Button {
+public class ValuePositionButton extends Button implements View.OnClickListener {
 
     private float lat;
     private float lng;
 
-    
+
     public ValuePositionButton(Context context, AttributeSet attr) {
         super(context, attr);
+        setOnClickListener(this);
+    }
+    
+    public void onClick(View view) {
+        pickLocation(view.getId());
+    }
+
+    private void pickLocation(int id) {
+        Intent intent = new Intent(getContext(), GetPositionActivity.class);
+        intent.putExtra("view_id", id);
+        Activity act = (Activity)getContext();
+        act.startActivityForResult(intent, Constants.REQUEST_GET_LOCATION);
     }
 
     /**
@@ -54,5 +59,5 @@ public class ValuePositionButton extends Button {
     public void setLng(float lng) {
         this.lng = lng;
     }
-    
+
 }

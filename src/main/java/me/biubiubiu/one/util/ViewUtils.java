@@ -11,7 +11,9 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import me.biubiubiu.one.ui.view.ValueDateView;
 import me.biubiubiu.one.ui.view.ValueSpinner;
+import me.biubiubiu.one.ui.view.ValueTimeView;
 
 import android.R;
 import android.content.Context;
@@ -141,6 +143,16 @@ public class ViewUtils {
             params.put(key, map.get(key));
         }
         return params;
+    }
+
+    public static String buildDate(ValueDateView dateView, ValueTimeView timeView) {
+        StringBuffer sb = new StringBuffer();
+        sb.append(dateView.mYear).append("-");
+        sb.append(dateView.mMonth).append("-");
+        sb.append(dateView.mDay).append(" ");
+        sb.append(timeView.mHour).append(":");
+        sb.append(timeView.mMinute);
+        return sb.toString();
     }
 
 }
