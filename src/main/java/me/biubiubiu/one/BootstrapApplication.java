@@ -8,15 +8,17 @@ import static android.os.Build.VERSION_CODES.FROYO;
 import android.app.Application;
 import android.app.Instrumentation;
 import android.content.Context;
-
+import android.preference.PreferenceManager;
 import com.github.kevinsawicki.http.HttpRequest;
 import android.widget.Toast;
 
+import org.yaxim.androidclient.YaximApplication;
+import org.yaxim.androidclient.data.YaximConfiguration;
 import com.baidu.mapapi.BMapManager;
 import com.baidu.mapapi.MKGeneralListener;
 import com.baidu.mapapi.map.MKEvent;
-
-
+import org.yaxim.androidclient.data.YaximConfiguration;
+import de.duenndns.ssl.MemorizingTrustManager;
 /**
  * one application
  */
@@ -25,9 +27,12 @@ public class BootstrapApplication extends Application {
     private static BootstrapApplication instance;
     private static ImageManager mImageManager;
     public BMapManager mBMapManager = null;
-
+    private YaximConfiguration mConfig;
     public static final String strKey = "RIfYQ1lQSuh5iz3uYKu6bWlb";
 
+    // MTM is needed globally for both the backend (connect)
+    // and the frontend (display dialog)
+    public MemorizingTrustManager mMTM;
 
     /**
      * Create main application
@@ -67,6 +72,11 @@ public class BootstrapApplication extends Application {
                                          .withCacheManager(new LruBitmapCache(this))
                                          .build(this));
         initEngineManager(this);
+        mMTM = new MemorizingTrustManager(this);
+        mConfig = new YaximConfiguration(PreferenceManager
+                                         .getDefaultSharedPreferences(this));
+        YaximApplication.mMTM = mMTM;
+        YaximApplication.mConfig = mConfig;
     }
 
     public void initEngineManager(Context context) {

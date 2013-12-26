@@ -65,6 +65,12 @@
   <uses-permission android:name="android.permission.READ_PHONE_STATE" />
   <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS" />
 
+  <!-- jabber permission -->
+  <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+  <uses-permission android:name="android.permission.INTERNET" />
+  <uses-permission android:name="android.permission.VIBRATE" />
+  <uses-permission android:name="android.permission.WAKE_LOCK" />
+
   <application
      android:name=".BootstrapApplication"
      android:icon="@drawable/icon"
@@ -146,7 +152,7 @@
 
       </intent-filter>
     </activity>
-    
+
     <activity android:name=".ui.BootstrapTimerActivity"
               android:configChanges="orientation|keyboardHidden|screenSize" android:label="@string/app_name"
               android:launchMode="singleTop"/>
@@ -184,6 +190,57 @@
        android:process=":remote" >
     </service>
 
+    <!-- jabber start -->
+    <activity android:name="org.yaxim.androidclient.MainWindow" android:label="@string/app_name"
+              android:configChanges="orientation|keyboardHidden">
+      <!-- <intent-filter> -->
+      <!--   <action android:name="android.intent.action.MAIN" /> -->
+      <!--   <category android:name="android.intent.category.LAUNCHER" /> -->
+      <!-- </intent-filter> -->
+      <intent-filter android:icon="@drawable/icon" android:label="@string/app_name">
+        <action android:name="android.intent.action.SEND"></action>
+        <category android:name="android.intent.category.DEFAULT"></category>
+        <data android:mimeType="text/*"></data>
+      </intent-filter>
+      <intent-filter android:icon="@drawable/icon" android:label="@string/app_name">
+        <action android:name="android.intent.action.SENDTO" />
+        <category android:name="android.intent.category.DEFAULT" />
+        <data android:host="jabber" android:scheme="imto" />
+      </intent-filter>
+    </activity>
+
+    <activity android:name="org.yaxim.androidclient.chat.ChatWindow" android:label="@string/app_name"
+              android:alwaysRetainTaskState="true">
+    </activity>
+
+    <activity android:name="org.yaxim.androidclient.preferences.MainPrefs"
+              android:label="@string/app_name">
+    </activity>
+
+    <activity android:name="org.yaxim.androidclient.preferences.AccountPrefs"
+              android:label="@string/app_name">
+    </activity>
+
+    <service android:name="org.yaxim.androidclient.service.XMPPService">
+      <intent-filter>
+        <action android:name="de.hdmstuttgart.yaxim.XMPPSERVICE" />
+      </intent-filter>
+    </service>
+
+    <receiver android:name="org.yaxim.androidclient.service.YaximBroadcastReceiver">
+      <intent-filter>
+        <action android:name="android.intent.action.ACTION_SHUTDOWN" />
+        <action android:name="android.net.conn.CONNECTIVITY_CHANGE" />
+      </intent-filter>
+    </receiver>
+
+    <provider android:name="org.yaxim.androidclient.data.ChatProvider"
+              android:authorities="org.yaxim.androidclient.provider.Chats" />
+    <provider android:name="org.yaxim.androidclient.data.RosterProvider"
+              android:authorities="org.yaxim.androidclient.provider.Roster" />
+
+    <activity android:name="de.duenndns.ssl.MemorizingActivity" />
+    <!-- jabber end -->
   </application>
 
 </manifest>

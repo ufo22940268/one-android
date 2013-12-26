@@ -90,6 +90,7 @@ public class CarouselActivity extends BootstrapFragmentActivity implements OnDra
                     startActivity(intent);
                 }
             });
+
     }
 
     @Override
@@ -124,6 +125,11 @@ public class CarouselActivity extends BootstrapFragmentActivity implements OnDra
             intent = new Intent(this, PostRideActivity.class);
             startActivity(intent);
             break;
+        case 4:
+            intent = new Intent(CarouselActivity.this, org.yaxim.androidclient.MainWindow.class);
+            startActivity(intent);
+            break;
+
         }
     }
 
