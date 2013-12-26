@@ -7,7 +7,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 
-public class RidePageFragment extends PageFragment implements AdapterView.OnItemClickListener {
+public class PassengerPageFragment extends PageFragment implements AdapterView.OnItemClickListener {
     
     @Override
     public View onCreateView(LayoutInflater arg0, ViewGroup arg1, Bundle arg2) {
@@ -25,6 +25,7 @@ public class RidePageFragment extends PageFragment implements AdapterView.OnItem
     }
 
     public String getEndPoint() {
-        return "rides";
+        return "passengers";
     }
+
 }

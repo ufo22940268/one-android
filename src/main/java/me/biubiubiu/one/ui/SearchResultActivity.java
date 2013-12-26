@@ -27,6 +27,6 @@ public class SearchResultActivity extends BaseActivity {
     protected void onCreate(Bundle arg0) {
         super.onCreate(arg0);
         setContentView(R.layout.container);
-        addContainerFragment(new PageFragment());
+        addContainerFragment(new RidesPageFragment());
     }
 }

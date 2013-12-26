@@ -18,7 +18,7 @@ import android.widget.ListView;
 import com.kanak.emptylayout.EmptyLayout;
 //import com.markupartist.android.widget.PullToRefreshListView;
 
-public class PageFragment extends BaseFragment {
+public abstract class PageFragment extends BaseFragment {
 
     public ListView mListView;
     protected PageAdapter mAdapter;
@@ -38,12 +38,14 @@ public class PageFragment extends BaseFragment {
         return parent;
     }
 
+    public abstract String getEndPoint();
+
     private void loadData() {
         HashMap<String, String> map = new HashMap<String, String>();
         map.put("lat", "12.2");
         map.put("lng", "2.2");
         mEmptyLayout.showLoading();
-        mHttpHandler.get("rides", map, new ResponseHandler() {
+        mHttpHandler.get(getEndPoint(), map, new ResponseHandler() {
                 @Override
                 public void onSuccess(String result) {
                     if (isFinished()) {
