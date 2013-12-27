@@ -44,7 +44,9 @@ import dagger.Provides;
                 SearchResultActivity.class,
                 RideDetailActivity.class,
                 ProfileActivity.class,
-                RouteActivity.class
+                RouteActivity.class,
+                PassengersActivity.class,
+                MyCommentActivity.class,
         }
 
 )

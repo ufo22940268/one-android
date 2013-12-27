@@ -27,6 +27,12 @@ public class SearchResultActivity extends BaseActivity {
     protected void onCreate(Bundle arg0) {
         super.onCreate(arg0);
         setContentView(R.layout.container);
-        addContainerFragment(new RidesPageFragment());
+        Intent intent = getIntent();
+        String mode = intent.getStringExtra("mode");
+        if (mode.equals("ride")) {
+            addContainerFragment(new RidePageFragment());
+        } else {
+            addContainerFragment(new PassengerPageFragment());
+        }
     }
 }

@@ -90,7 +90,15 @@ public class CarouselActivity extends BootstrapFragmentActivity implements OnDra
                     startActivity(intent);
                 }
             });
-
+        
+        menuDrawer.findViewById(R.id.my_comment).setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    menuDrawer.toggleMenu();
+                    Intent intent = new Intent(CarouselActivity.this, MyCommentActivity.class);
+                    startActivity(intent);
+                }
+            });
     }
 
     @Override

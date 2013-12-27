@@ -80,7 +80,7 @@
   <me.biubiubiu.one.ui.view.CapitalizedTextView
       android:layout_width="fill_parent"
       android:layout_height="wrap_content"
-      android:id="@+id/timer"
+      android:id="@+id/my_comment"
       android:text="我的评价"
       android:drawableLeft="@drawable/left_menu_comment"
       android:drawablePadding="4dip"

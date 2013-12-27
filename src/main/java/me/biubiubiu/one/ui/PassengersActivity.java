@@ -25,7 +25,7 @@ public class PassengersActivity extends BaseActivity  {
     @InjectView(R.id.content_indicator) TabPageIndicator indicator;
     @InjectView(R.id.content_pager) ViewPager pager;
     static public final String[] TITLES = {
-        "周围车主信息",
+        "我周围的搭车信息",
         "信息搜索",
     };
 
@@ -35,7 +35,7 @@ public class PassengersActivity extends BaseActivity  {
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.rides);
-        getSupportActionBar().setTitle("看谁能带我");
+        getSupportActionBar().setTitle("看看谁要搭车");
         Views.inject(this);
         if (mAdapter == null) {
             mAdapter = new ContentAdapter(getSupportFragmentManager());

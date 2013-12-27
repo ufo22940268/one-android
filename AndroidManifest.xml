@@ -84,9 +84,9 @@
       <intent-filter>
         <action android:name="android.intent.action.MAIN" />
 
-        <!-- <category android:name="android.intent.category.LAUNCHER" /> -->
+        <category android:name="android.intent.category.LAUNCHER" />
 
-        <!-- <category android:name="android.intent.category.DEFAULT" /> -->
+        <category android:name="android.intent.category.DEFAULT" />
       </intent-filter>
     </activity>
 
@@ -115,8 +115,6 @@
        >
       <intent-filter>
         <action android:name="android.intent.action.MAIN" />
-        <category android:name="android.intent.category.LAUNCHER" />
-        <category android:name="android.intent.category.DEFAULT" />
       </intent-filter>
     </activity>
 
@@ -249,6 +247,16 @@
 
     <activity android:name="de.duenndns.ssl.MemorizingActivity" />
     <!-- jabber end -->
+
+    <activity
+       android:name=".ui.MyCommentActivity"
+       android:configChanges="orientation|keyboardHidden|screenSize"
+       android:label="@string/app_name"
+       >
+      <intent-filter>
+        <action android:name="android.intent.action.MAIN" />
+      </intent-filter>
+    </activity>
   </application>
 
 </manifest>

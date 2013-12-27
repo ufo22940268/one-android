@@ -8,6 +8,7 @@ import me.biubiubiu.one.Injector;
 import me.biubiubiu.one.R;
 import me.biubiubiu.one.util.HttpHandler.ResponseHandler;
 import me.biubiubiu.one.util.Parser;
+import com.kanak.emptylayout.EmptyLayout;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -15,7 +16,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ListView;
 
-import com.kanak.emptylayout.EmptyLayout;
 //import com.markupartist.android.widget.PullToRefreshListView;
 
 public abstract class PageFragment extends BaseFragment {

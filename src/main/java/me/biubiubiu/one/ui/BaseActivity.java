@@ -66,4 +66,9 @@ public class BaseActivity extends BootstrapFragmentActivity {
     protected BootstrapApplication getMyApp() {
         return (BootstrapApplication)getApplication();
     }
+
+    protected String getUserId() {
+        return "52a468d91d24ead09274284d";
+    }
+
 }

@@ -12,7 +12,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-public class SearchRideFragment extends SearchFragment implements View.OnClickListener {
+public class SearchPassengerFragment extends SearchFragment implements View.OnClickListener {
 
     protected String[][] PROJECTION_TYPE = {
         {"自驾车", "0"},
@@ -22,7 +22,7 @@ public class SearchRideFragment extends SearchFragment implements View.OnClickLi
     @Override
     public void onClick(View view) {
         Intent intent = new Intent(getActivity(), SearchResultActivity.class);
-        intent.putExtra("mode", "ride");
+        intent.putExtra("mode", "passenger");
         intent.putExtra("start_lat", mStartLocView.getLat());
         intent.putExtra("start_lng", mStartLocView.getLng());
         intent.putExtra("dest_lat", mDestLocView.getLat());
