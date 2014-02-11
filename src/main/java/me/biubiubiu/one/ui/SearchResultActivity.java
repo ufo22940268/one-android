@@ -27,6 +27,7 @@ public class SearchResultActivity extends BaseActivity {
     protected void onCreate(Bundle arg0) {
         super.onCreate(arg0);
         setContentView(R.layout.container);
+        setActionBarTitle("搜索结果");
         Intent intent = getIntent();
         String mode = intent.getStringExtra("mode");
         if (mode.equals("ride")) {

@@ -125,8 +125,16 @@ public class CarouselActivity extends BootstrapFragmentActivity implements OnDra
     @Override
     public void onItemClick(AdapterView parent, View view, int pos, long id) {
         switch (pos) {
+        case 0:
+            Intent intent = new Intent(this, PassengersActivity.class);
+            startActivity(intent);
+            break;
         case 1:
-            Intent intent = new Intent(this, RidesActivity.class);
+            intent = new Intent(this, RidesActivity.class);
+            startActivity(intent);
+            break;
+        case 2:
+            intent = new Intent(this, PostRideActivity.class);
             startActivity(intent);
             break;
         case 3:

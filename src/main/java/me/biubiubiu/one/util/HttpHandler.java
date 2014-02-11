@@ -27,7 +27,8 @@ public class HttpHandler {
 
     static public final boolean DEBUG = true;
     static public final String TAG = "HttpHandler";
-    static public final String BASE_URL = "http://192.241.196.189:10010/";
+    // static public final String BASE_URL = "http://192.241.196.189:10010/";
+    static public final String BASE_URL = "http://oneapi.biubiubiu.me/";
     private Context mContext;
     private ProgressDialog mLoadingDialog;
     static public final String USER_TOKEN = "52a468d91d24ead09274284d";

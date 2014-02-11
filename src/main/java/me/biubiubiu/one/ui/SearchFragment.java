@@ -40,7 +40,7 @@ public abstract class SearchFragment extends BaseFragment implements View.OnClic
         initViews(parent);
         mSubmitView = parent.findViewById(R.id.submit);
         mSubmitView.setOnClickListener(this);
-        setActionBarTitle("搜索结果");
+        // setActionBarTitle("搜索结果");
         mTypeView.setup(PROJECTION_TYPE);
         return parent;
     }
