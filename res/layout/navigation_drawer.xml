@@ -8,157 +8,200 @@
 
   <!-- header banner -->
   <RelativeLayout
-      android:layout_width="match_parent"
-      android:layout_height="150dip"
-      android:background="@drawable/drawer_header_banner"
-      android:padding="10dip"
-      >
-
-    <ImageView
-        android:id="@+id/portrait"
-        android:layout_width="70dip"
-        android:layout_height="70dip"
-        android:src="@drawable/stallman"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentBottom="true"
-        android:scaleType="centerCrop"
-        />
+     android:layout_width="match_parent"
+     android:layout_height="150dip"
+     android:background="@drawable/drawer_header_banner"
+     android:padding="10dip"
+     >
 
     <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:layout_toRightOf="@id/portrait"
-        android:layout_marginLeft="6dip"
-        android:layout_alignParentBottom="true"
-        >
+       android:id="@+id/status"
+       android:layout_width="wrap_content"
+       android:layout_height="wrap_content"
+       android:layout_centerHorizontal="true"
+       android:layout_marginLeft="6dip"
+       android:layout_alignParentBottom="true"
+       >
+
+      <!-- <TextView -->
+      <!--    android:id="@+id/status_ride_coin" -->
+      <!--    android:layout_width="wrap_content" -->
+      <!--    android:layout_height="wrap_content" -->
+      <!--    android:textColor="#fff" -->
+      <!--    android:text="搭车币:10" -->
+      <!--    android:background="@drawable/status_ride_coin" -->
+      <!--    /> -->
+
+      <!-- <TextView -->
+      <!--    android:id="@+id/status_merchant_coin" -->
+      <!--    android:layout_width="wrap_content" -->
+      <!--    android:layout_height="wrap_content" -->
+      <!--    android:textColor="#fff" -->
+      <!--    android:text="爱心币:2" -->
+      <!--    android:background="@drawable/status_merchant_coin" -->
+      <!--    /> -->
+
+      <ImageView
+         android:layout_width="90dip"
+         android:layout_height="wrap_content"
+         android:src="@drawable/a0006_03"
+         />
+
+      <ImageView
+         android:layout_width="90dip"
+         android:layout_height="wrap_content"
+         android:src="@drawable/a0008_04"
+         />
+      
+    </LinearLayout>
+
+    <ImageView
+       android:id="@+id/portrait"
+       android:layout_width="50dip"
+       android:layout_height="50dip"
+       android:src="@drawable/stallman"
+       android:layout_alignParentLeft="true"
+       android:layout_above="@id/status"
+       android:scaleType="centerCrop"
+       />
+
+    <LinearLayout
+       android:id="@+id/profile"
+       android:layout_width="wrap_content"
+       android:layout_height="wrap_content"
+       android:orientation="vertical"
+       android:layout_above="@id/status"
+       android:layout_toRightOf="@id/portrait"
+       android:layout_marginLeft="6dip"
+       >
 
       <TextView
-          android:id="@+id/name"
-          android:layout_width="wrap_content"
-          android:layout_height="wrap_content"
-          android:textColor="#fff"
-          android:text="侯哥"
-          />
+         android:id="@+id/name"
+         android:layout_width="wrap_content"
+         android:layout_height="wrap_content"
+         android:textColor="#fff"
+         android:text="侯哥"
+         />
 
       <TextView
-          android:id="@+id/address"
-          android:layout_width="wrap_content"
-          android:layout_height="wrap_content"
-          android:textColor="#fff"
-          android:text="浙江杭州"
-          />
+         android:id="@+id/address"
+         android:layout_width="wrap_content"
+         android:layout_height="wrap_content"
+         android:textColor="#fff"
+         android:text="浙江杭州"
+         />
 
     </LinearLayout>
+
 
   </RelativeLayout>
 
   <View
-      android:layout_width="fill_parent"
-      android:layout_height="1dp"
-      android:background="@color/vert_sep_color"
-      />
+     android:layout_width="fill_parent"
+     android:layout_height="1dp"
+     android:background="@color/vert_sep_color"
+     />
 
   <me.biubiubiu.one.ui.view.CapitalizedTextView
-      android:layout_width="fill_parent"
-      android:layout_height="wrap_content"
-      android:id="@+id/home"
-      android:text="搭车记录"
-      android:drawableLeft="@drawable/left_menu_ride_history"
-      android:drawablePadding="4dip"
-      style="@style/NavMenuButton"
-      android:paddingLeft="10dp"
-      android:gravity="left|center_vertical"
-      />
+     android:layout_width="fill_parent"
+     android:layout_height="wrap_content"
+     android:id="@+id/home"
+     android:text="搭车记录"
+     android:drawableLeft="@drawable/left_menu_ride_history"
+     android:drawablePadding="4dip"
+     style="@style/NavMenuButton"
+     android:paddingLeft="10dp"
+     android:gravity="left|center_vertical"
+     />
 
   <View
-      android:layout_width="fill_parent"
-      android:layout_height="1dp"
-      android:background="@color/vert_sep_color"
-      />
+     android:layout_width="fill_parent"
+     android:layout_height="1dp"
+     android:background="@color/vert_sep_color"
+     />
 
   <me.biubiubiu.one.ui.view.CapitalizedTextView
-      android:layout_width="fill_parent"
-      android:layout_height="wrap_content"
-      android:id="@+id/my_comment"
-      android:text="我的评价"
-      android:drawableLeft="@drawable/left_menu_comment"
-      android:drawablePadding="4dip"
-      style="@style/NavMenuButton"
-      android:paddingLeft="10dp"
-      android:gravity="left|center_vertical"
-      />
+     android:layout_width="fill_parent"
+     android:layout_height="wrap_content"
+     android:id="@+id/my_comment"
+     android:text="我的评价"
+     android:drawableLeft="@drawable/left_menu_comment"
+     android:drawablePadding="4dip"
+     style="@style/NavMenuButton"
+     android:paddingLeft="10dp"
+     android:gravity="left|center_vertical"
+     />
 
   <View
-      android:layout_width="fill_parent"
-      android:layout_height="1dp"
-      android:background="@color/vert_sep_color"
-      />
+     android:layout_width="fill_parent"
+     android:layout_height="1dp"
+     android:background="@color/vert_sep_color"
+     />
 
   <me.biubiubiu.one.ui.view.CapitalizedTextView
-      android:layout_width="fill_parent"
-      android:layout_height="wrap_content"
-      android:id="@+id/profile"
-      android:text="我的个人信息"
-      android:drawableLeft="@drawable/left_menu_user"
-      android:drawablePadding="4dip"
-      style="@style/NavMenuButton"
-      android:paddingLeft="10dp"
-      android:gravity="left|center_vertical"
-      />
+     android:layout_width="fill_parent"
+     android:layout_height="wrap_content"
+     android:id="@+id/profile"
+     android:text="我的个人信息"
+     android:drawableLeft="@drawable/left_menu_user"
+     android:drawablePadding="4dip"
+     style="@style/NavMenuButton"
+     android:paddingLeft="10dp"
+     android:gravity="left|center_vertical"
+     />
 
   <View
-      android:layout_width="fill_parent"
-      android:layout_height="1dp"
-      android:background="@color/vert_sep_color"
-      />
+     android:layout_width="fill_parent"
+     android:layout_height="1dp"
+     android:background="@color/vert_sep_color"
+     />
 
   <me.biubiubiu.one.ui.view.CapitalizedTextView
-      android:layout_width="fill_parent"
-      android:layout_height="wrap_content"
-      android:id="@+id/timer"
-      android:text="我的好友"
-      android:drawableLeft="@drawable/left_menu_friend"
-      android:drawablePadding="4dip"
-      style="@style/NavMenuButton"
-      android:paddingLeft="10dp"
-      android:gravity="left|center_vertical"
-      />
+     android:layout_width="fill_parent"
+     android:layout_height="wrap_content"
+     android:id="@+id/timer"
+     android:text="我的好友"
+     android:drawableLeft="@drawable/left_menu_friend"
+     android:drawablePadding="4dip"
+     style="@style/NavMenuButton"
+     android:paddingLeft="10dp"
+     android:gravity="left|center_vertical"
+     />
 
   <View
-      android:layout_width="fill_parent"
-      android:layout_height="1dp"
-      android:background="@color/vert_sep_color"
-      />
+     android:layout_width="fill_parent"
+     android:layout_height="1dp"
+     android:background="@color/vert_sep_color"
+     />
 
   <me.biubiubiu.one.ui.view.CapitalizedTextView
-      android:layout_width="fill_parent"
-      android:layout_height="wrap_content"
-      android:id="@+id/timer"
-      android:text="系统设置"
-      android:drawableLeft="@drawable/left_menu_setting"
-      android:drawablePadding="4dip"
-      style="@style/NavMenuButton"
-      android:paddingLeft="10dp"
-      android:gravity="left|center_vertical"
-      />
+     android:layout_width="fill_parent"
+     android:layout_height="wrap_content"
+     android:id="@+id/timer"
+     android:text="系统设置"
+     android:drawableLeft="@drawable/left_menu_setting"
+     android:drawablePadding="4dip"
+     style="@style/NavMenuButton"
+     android:paddingLeft="10dp"
+     android:gravity="left|center_vertical"
+     />
 
   <View
-      android:layout_width="fill_parent"
-      android:layout_height="1dp"
-      android:background="@color/vert_sep_color"
-      />
+     android:layout_width="fill_parent"
+     android:layout_height="1dp"
+     android:background="@color/vert_sep_color"
+     />
 
   <TextView
-      android:id="@+id/version"
-      android:layout_width="match_parent"
-      android:layout_height="match_parent"
-      style="@style/NavMenuButton"
-      android:gravity="bottom"
-      android:layout_marginLeft="5dp"
-      android:layout_marginBottom="5dp"
-      android:textSize="9sp"
-      />
+     android:id="@+id/version"
+     android:layout_width="match_parent"
+     android:layout_height="match_parent"
+     style="@style/NavMenuButton"
+     android:gravity="bottom"
+     android:layout_marginLeft="5dp"
+     android:layout_marginBottom="5dp"
+     android:textSize="9sp"
+     />
 
 
 </LinearLayout>
